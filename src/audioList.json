@@ -1,0 +1,17 @@
+[
+    {
+        "id": "1",
+        "title": "サンプル音声 1",
+        "filename": "sample1.m4a"
+    },
+    {
+        "id": "2",
+        "title": "サンプル音声 2",
+        "filename": "sample2.m4a"
+    },
+    {
+        "id": "3",
+        "title": "サンプル音声 3",
+        "filename": "sample3.m4a"
+    }
+]
