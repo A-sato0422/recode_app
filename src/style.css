@@ -160,8 +160,10 @@ main {
     background: linear-gradient(180deg, var(--bg-elevated) 0%, var(--bg-primary) 50%);
     display: flex;
     flex-direction: column;
-    padding: 1.5rem;
+    padding: 1rem 1rem 0 1rem;
     overflow-y: auto;
+    box-sizing: border-box;
+    position: relative;
 }
 
 /* 音声要素（非表示） */
@@ -190,17 +192,17 @@ main {
 
 /* カバー画像 */
 .player-cover-container {
-    flex: 1;
+    flex: 1 1 auto;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 2rem 0;
-    max-height: 60vh;
+    padding: 1rem 0;
+    min-height: 200px;
 }
 
 .player-cover {
-    width: 100%;
-    max-width: 350px;
+    width: 90%;
+    max-width: 320px;
     aspect-ratio: 1;
     border-radius: 16px;
     background-size: cover;
@@ -210,7 +212,8 @@ main {
 
 /* 再生情報 */
 .player-info {
-    padding: 1.5rem 0;
+    flex: 0 0 auto;
+    padding: 1rem 0;
     text-align: center;
 }
 
@@ -229,7 +232,14 @@ main {
 
 /* プレイヤーコントロール */
 .player-controls {
-    padding: 1rem 0 2rem;
+    flex: 0 0 auto;
+    padding: 1rem 0;
+    padding-bottom: max(1rem, env(safe-area-inset-bottom));
+    background: var(--bg-primary);
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
 
 .progress-container {
