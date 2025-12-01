@@ -83,14 +83,47 @@ class App {
             this.resetToDefault()
         })
 
-        // スワイプイベント
+        // スワイプイベント（改善版）
+        let touchStartX = 0
+        let touchStartY = 0
+        let touchMoveX = 0
+        let touchMoveY = 0
+        let isSwiping = false
+
         this.pagesContainer.addEventListener('touchstart', (e) => {
-            this.touchStartX = e.touches[0].clientX
+            touchStartX = e.touches[0].clientX
+            touchStartY = e.touches[0].clientY
+            isSwiping = false
+        }, { passive: true })
+
+        this.pagesContainer.addEventListener('touchmove', (e) => {
+            if (!touchStartX) return
+            
+            touchMoveX = e.touches[0].clientX
+            touchMoveY = e.touches[0].clientY
+            
+            const deltaX = Math.abs(touchMoveX - touchStartX)
+            const deltaY = Math.abs(touchMoveY - touchStartY)
+            
+            // 横方向の動きが縦方向より大きい場合、スワイプとして認識
+            if (deltaX > deltaY && deltaX > 10) {
+                isSwiping = true
+            }
         }, { passive: true })
 
         this.pagesContainer.addEventListener('touchend', (e) => {
-            this.touchEndX = e.changedTouches[0].clientX
+            if (!isSwiping) return
+            
+            this.touchStartX = touchStartX
+            this.touchEndX = touchMoveX || e.changedTouches[0].clientX
             this.handleSwipe()
+            
+            // リセット
+            touchStartX = 0
+            touchStartY = 0
+            touchMoveX = 0
+            touchMoveY = 0
+            isSwiping = false
         }, { passive: true })
 
         // マウスでのドラッグもサポート
@@ -112,7 +145,7 @@ class App {
             if (!isDragging) return
             isDragging = false
             this.pagesContainer.style.cursor = ''
-            
+
             const endX = e.clientX
             const diff = startX - endX
             const threshold = 50
