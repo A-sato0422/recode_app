@@ -86,11 +86,44 @@ class App {
         // スワイプイベント
         this.pagesContainer.addEventListener('touchstart', (e) => {
             this.touchStartX = e.touches[0].clientX
-        })
+        }, { passive: true })
 
         this.pagesContainer.addEventListener('touchend', (e) => {
             this.touchEndX = e.changedTouches[0].clientX
             this.handleSwipe()
+        }, { passive: true })
+
+        // マウスでのドラッグもサポート
+        let isDragging = false
+        let startX = 0
+
+        this.pagesContainer.addEventListener('mousedown', (e) => {
+            isDragging = true
+            startX = e.clientX
+            this.pagesContainer.style.cursor = 'grabbing'
+        })
+
+        document.addEventListener('mousemove', (e) => {
+            if (!isDragging) return
+            e.preventDefault()
+        })
+
+        document.addEventListener('mouseup', (e) => {
+            if (!isDragging) return
+            isDragging = false
+            this.pagesContainer.style.cursor = ''
+            
+            const endX = e.clientX
+            const diff = startX - endX
+            const threshold = 50
+
+            if (Math.abs(diff) > threshold) {
+                if (diff > 0 && this.currentPageIndex < this.pages.length - 1) {
+                    this.updatePage(this.currentPageIndex + 1)
+                } else if (diff < 0 && this.currentPageIndex > 0) {
+                    this.updatePage(this.currentPageIndex - 1)
+                }
+            }
         })
     }
 
