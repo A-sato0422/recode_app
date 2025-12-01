@@ -83,41 +83,43 @@ class App {
             this.resetToDefault()
         })
 
-        // スワイプイベント（改善版）
+        // スワイプイベント（mainタグ全体で検知）
         let touchStartX = 0
         let touchStartY = 0
         let touchMoveX = 0
         let touchMoveY = 0
         let isSwiping = false
 
-        this.pagesContainer.addEventListener('touchstart', (e) => {
+        const mainElement = document.querySelector('main')!
+
+        mainElement.addEventListener('touchstart', (e) => {
             touchStartX = e.touches[0].clientX
             touchStartY = e.touches[0].clientY
             isSwiping = false
         }, { passive: true })
 
-        this.pagesContainer.addEventListener('touchmove', (e) => {
+        mainElement.addEventListener('touchmove', (e) => {
             if (!touchStartX) return
-            
+
             touchMoveX = e.touches[0].clientX
             touchMoveY = e.touches[0].clientY
-            
+
             const deltaX = Math.abs(touchMoveX - touchStartX)
             const deltaY = Math.abs(touchMoveY - touchStartY)
-            
+
             // 横方向の動きが縦方向より大きい場合、スワイプとして認識
             if (deltaX > deltaY && deltaX > 10) {
                 isSwiping = true
             }
         }, { passive: true })
 
-        this.pagesContainer.addEventListener('touchend', (e) => {
+        mainElement.addEventListener('touchend', (e) => {
             if (!isSwiping) return
-            
+
             this.touchStartX = touchStartX
             this.touchEndX = touchMoveX || e.changedTouches[0].clientX
             this.handleSwipe()
-            
+
             // リセット
             touchStartX = 0
             touchStartY = 0
