@@ -166,7 +166,7 @@ export class PlayerModal {
 
     // 音声ファイルを読み込み（import.meta.env.BASE_URL を使用してベースパスを取得）
     const baseUrl = import.meta.env.BASE_URL || '/'
-    const audioUrl = `${baseUrl}audio/${audio.audioFile}`
+    const audioUrl = `${baseUrl}${audio.audioFile}`
     this.audioElement.src = audioUrl
     console.log('音声ファイルを読み込み:', audioUrl)
     this.audioElement.load()
