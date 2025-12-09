@@ -1,43 +1,43 @@
 [
     {
         "id": 1,
-        "title": "おはよう",
-        "coverImage": "https://placehold.co/300x300/FF6B9D/FFFFFF/png?text=%E2%98%80%EF%B8%8F%0A%E3%81%8A%E3%81%AF%E3%82%88%E3%81%86&font=noto-sans-jp",
+        "title": "大好き",
+        "coverImage": "https://placehold.co/300x300/FF6B9D/FFFFFF/png?text=1&font=noto-sans",
         "recordedAt": "2025-11-20 07:30",
         "audioFile": "good_morning.m4a"
     },
     {
         "id": 2,
-        "title": "おやすみ",
-        "coverImage": "https://placehold.co/300x300/4A4AFF/FFFFFF/png?text=%F0%9F%8C%99%0A%E3%81%8A%E3%82%84%E3%81%99%E3%81%BF&font=noto-sans-jp",
+        "title": "善根沈下だ",
+        "coverImage": "https://placehold.co/300x300/4A4AFF/FFFFFF/png?text=2&font=noto-sans",
         "recordedAt": "2025-11-21 22:15",
         "audioFile": "good_morning.m4a"
     },
     {
         "id": 3,
-        "title": "ありがとう",
-        "coverImage": "https://placehold.co/300x300/FFB84D/FFFFFF/png?text=%F0%9F%99%8F%0A%E3%81%82%E3%82%8A%E3%81%8C%E3%81%A8%E3%81%86&font=noto-sans-jp",
+        "title": "うーうん",
+        "coverImage": "https://placehold.co/300x300/FFB84D/FFFFFF/png?text=3&font=noto-sans",
         "recordedAt": "2025-11-22 14:45",
         "audioFile": "good_morning.m4a"
     },
     {
         "id": 4,
-        "title": "大好き",
-        "coverImage": "https://placehold.co/300x300/FF4D6D/FFFFFF/png?text=%E2%9D%A4%EF%B8%8F%0A%E5%A4%A7%E5%A5%BD%E3%81%8D&font=noto-sans-jp",
+        "title": "うまぁい",
+        "coverImage": "https://placehold.co/300x300/FF4D6D/FFFFFF/png?text=4&font=noto-sans",
         "recordedAt": "2025-11-23 18:20",
         "audioFile": "good_morning.m4a"
     },
     {
         "id": 5,
-        "title": "がんばって",
-        "coverImage": "https://placehold.co/300x300/6BCF7F/FFFFFF/png?text=%F0%9F%92%AA%0A%E3%81%8C%E3%82%93%E3%81%B0%E3%81%A3%E3%81%A6&font=noto-sans-jp",
+        "title": "大丈夫ぅ",
+        "coverImage": "https://placehold.co/300x300/6BCF7F/FFFFFF/png?text=5&font=noto-sans",
         "recordedAt": "2025-11-24 09:00",
         "audioFile": "good_morning.m4a"
     },
     {
         "id": 6,
-        "title": "いってらっしゃい",
-        "coverImage": "https://placehold.co/300x300/9B7EDE/FFFFFF/png?text=%F0%9F%91%8B%0A%E3%81%84%E3%81%A3%E3%81%A6%E3%82%89%E3%81%A3%E3%81%97%E3%82%83%E3%81%84&font=noto-sans-jp",
+        "title": "さとくんのさとくん",
+        "coverImage": "https://placehold.co/300x300/9B7EDE/FFFFFF/png?text=6&font=noto-sans",
         "recordedAt": "2025-11-25 08:15",
         "audioFile": "good_morning.m4a"
     }
